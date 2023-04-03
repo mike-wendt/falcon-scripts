@@ -486,6 +486,7 @@ cs_os_name=$(
     if [ "${os_name}" = "Pop!_OS" ] ; then
         # install ubuntu agent
         os_name="Ubuntu"
+    fi
     case "${os_name}" in
         Amazon)
             echo "Amazon Linux";;
