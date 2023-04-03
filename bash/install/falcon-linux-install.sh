@@ -483,6 +483,9 @@ os_version=$(
 cs_os_name=$(
     # returns OS name as recognised by CrowdStrike Falcon API
     # shellcheck disable=SC2221,SC2222
+    if [ "${os_name}" = "Pop!_OS" ] ; then
+        # install ubuntu agent
+        os_name="Ubuntu"
     case "${os_name}" in
         Amazon)
             echo "Amazon Linux";;
@@ -492,7 +495,7 @@ cs_os_name=$(
             echo "Debian";;
         SLES)
             echo "SLES";;
-        Ubuntu|Pop!_OS)
+        Ubuntu)
             echo "Ubuntu";;
         *)
             die "Unrecognized OS: ${os_name}";;
