@@ -492,7 +492,7 @@ cs_os_name=$(
             echo "Debian";;
         SLES)
             echo "SLES";;
-        Ubuntu)
+        Ubuntu|Pop!_OS)
             echo "Ubuntu";;
         *)
             die "Unrecognized OS: ${os_name}";;
