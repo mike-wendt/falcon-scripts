@@ -273,6 +273,10 @@ os_install_package() {
         fi
     }
     # shellcheck disable=SC2221,SC2222
+    if [ "${os_name}" = "Pop!_OS" ]; then
+        # install ubuntu agent
+        os_name="Ubuntu"
+    fi
     case "${os_name}" in
         Amazon|CentOS|Oracle|RHEL|Rocky|AlmaLinux|SLES)
             rpm_install_package "$pkg"
